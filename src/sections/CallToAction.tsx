@@ -6,7 +6,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import helixImage from "@/assets/images/helix2.png";
 import emojiStarImage from "@/assets/images/emojistar.png";
 
-const GOOGLE_SCRIPT_URL ="https://script.google.com/macros/s/AKfycbwtkv5GdJ4Ff--j9_fvNXYsUl2ZaRJ8K_PUT4n0GDuQNrtcirYvRx83L1atuQLR2aBB/exec";
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwtkv5GdJ4Ff--j9_fvNXYsUl2ZaRJ8K_PUT4n0GDuQNrtcirYvRx83L1atuQLR2aBB/exec";
 
 const CallToAction = () => {
   const [formData, setFormData] = useState({
@@ -27,85 +28,86 @@ const CallToAction = () => {
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setLoading(true);
-  setFeedback("");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setFeedback("");
 
-  try {
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-      },
-      body: new URLSearchParams(formData).toString(),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Network response was not ok: ${response.statusText}`);
-    }
-
-    let result;
     try {
-      result = await response.json();
-    } catch {
-      // fallback if response is not JSON
-      setFeedback("Message sent! (no JSON response)");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type":
+            "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body: new URLSearchParams(formData).toString(),
       });
-      return;
-    }
 
-    if (result.result === "success") {
-      setFeedback("Message sent successfully!");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } else {
-      setFeedback("Failed to send message. Please try again.");
-      console.error("Error from Google Script:", result);
-    }
-  } catch (error) {
-    setFeedback("An error occurred. Please check the console.");
-    console.error("Fetch error:", error);
-  } finally {
-    setLoading(false);
-  }
-};
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
 
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        setFeedback("Message sent! (no JSON response)");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        return;
+      }
+
+      if (result.result === "success") {
+        setFeedback("Message sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        setFeedback("Failed to send message. Please try again.");
+        console.error("Error from Google Script:", result);
+      }
+    } catch (error) {
+      setFeedback("An error occurred. Please check the console.");
+      console.error("Fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section
       ref={sectionRef}
-      className="bg-black text-white py-20 text-center"
+      className="bg-black text-white py-20 text-center overflow-hidden"
     >
       <div className="container max-w-xl mx-auto relative">
         <motion.div style={{ translateY }}>
           <Image
             src={helixImage}
             alt=""
-            className="absolute top-6 left-[calc(100%+36px)]"
+            className="absolute top-[150px] left-[calc(100%+36px)]"
           />
         </motion.div>
         <motion.div style={{ translateY }}>
           <Image
             src={emojiStarImage}
             alt=""
-            className="absolute -top-[120px] right-[calc(100%+24px)]"
+            className="absolute -top-[50px] right-[calc(100%+24px)]"
           />
         </motion.div>
 
