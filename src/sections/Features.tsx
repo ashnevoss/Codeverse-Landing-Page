@@ -3,7 +3,7 @@ import { Feature } from "@/components/Feature";
 const pricingPlans = [
   {
     title: "Coding Basics",
-    price: "₹2,500",
+    price: "₹3,499",
     description: "Learn the fundamentals of programming with beginner-friendly lessons.",
     perks: [
       "Introduction to programming",
@@ -14,7 +14,7 @@ const pricingPlans = [
   },
   {
     title: "Dev Starter Pack",
-    price: "₹5,000",
+    price: "₹6,999",
     description: "Master coding basics plus essential development tools and practices.",
     perks: [
       "Everything in Coding Basics",
@@ -25,7 +25,7 @@ const pricingPlans = [
   },
   {
     title: "Full Web Development",
-    price: "₹25,000",
+    price: "₹24,999",
     description: "Build complete, functional websites with modern technologies.",
     perks: [
       "Everything in Dev Starter Pack",
