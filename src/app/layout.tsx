@@ -6,7 +6,7 @@ import "./globals.css";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Codeverse",
+  title: "Dev-Vibe",
   description: "Fastest Way To Learn Code",
 };
 

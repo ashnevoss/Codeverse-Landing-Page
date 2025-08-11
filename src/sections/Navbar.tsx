@@ -14,15 +14,16 @@ export const Navbar = () => {
       <div className="px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="relative w-36 h-12">
-            <Image
-              src={logoImage}
-              alt="Saas logo"
-              fill
-              style={{ objectFit: "contain" }}
-              priority
-            />
-          </div>
+          <div className="relative w-24 h-8">
+  <Image
+    src={logoImage}
+    alt="Saas logo"
+    fill
+    style={{ objectFit: "contain" }}
+    priority
+  />
+</div>
+
 
           {/* Mobile Menu Button */}
           <button
