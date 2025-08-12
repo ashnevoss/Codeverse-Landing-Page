@@ -3,35 +3,35 @@ import { Feature } from "@/components/Feature";
 const pricingPlans = [
   {
     title: "Coding Basics",
-    price: "₹3,499",
+    price: "₹4,999",
     description: "Learn the fundamentals of programming with beginner-friendly lessons.",
     perks: [
       "Introduction to programming",
+      "Learn Python, Java, JavaScript",
       "Hands-on coding exercises",
-      "1-on-1 mentorship",
-      "Offline or online option"
+      "1 on 1 personal guidence"
     ]
   },
   {
     title: "Dev Starter Pack",
-    price: "₹6,999",
+    price: "₹9,999",
     description: "Master coding basics plus essential development tools and practices.",
     perks: [
-      "Everything in Coding Basics",
-      "Basics of multiple languages",
-      "Project-based learning",
-      "Personalized guidance"
+      "Advanced Python & JavaScript",
+      "HTML & CSS responsive design",
+      "React.js & Next.js basics",
+      "Basic backend with Node.js"
     ]
   },
   {
     title: "Full Web Development",
-    price: "₹24,999",
+    price: "₹29,999",
     description: "Build complete, functional websites with modern technologies.",
     perks: [
-      "Everything in Dev Starter Pack",
-      "Frontend + Backend training",
-      "Real-world projects",
-      "Portfolio building support"
+      "Advanced frontend & backend skills",
+      "Modern design frameworks & tools",
+      "UX/UI psychology principles",
+      "Full-stack capstone project"
     ]
   }
 ];
