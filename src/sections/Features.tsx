@@ -4,36 +4,42 @@ const pricingPlans = [
   {
     title: "Coding Basics",
     price: "₹4,999",
-    description: "Learn the fundamentals of programming with beginner-friendly lessons.",
+    description:
+      "Learn the fundamentals of programming with beginner-friendly lessons.",
     perks: [
       "Introduction to programming",
       "Learn Python, Java, JavaScript",
       "Hands-on coding exercises",
-      "1 on 1 personal guidence"
-    ]
+      "1 on 1 personal guidence",
+    ],
+    file: "/files/coding_basics.pdf",
   },
   {
     title: "Dev Starter Pack",
     price: "₹9,999",
-    description: "Master coding basics plus essential development tools and practices.",
+    description:
+      "Master coding basics plus essential development tools and practices.",
     perks: [
       "Advanced Python & JavaScript",
       "HTML & CSS responsive design",
       "React.js & Next.js basics",
-      "Basic backend with Node.js"
-    ]
+      "Basic backend with Node.js",
+    ],
+    file: "/files/dev_starter.pdf",
   },
   {
     title: "Full Web Development",
     price: "₹29,999",
-    description: "Build complete, functional websites with modern technologies.",
+    description:
+      "Build complete, functional websites with modern technologies.",
     perks: [
       "Advanced frontend & backend skills",
       "Modern design frameworks & tools",
       "UX/UI psychology principles",
-      "Full-stack capstone project"
-    ]
-  }
+      "Full-stack capstone project",
+    ],
+    file: "/files/full_web_dev.pdf",
+  },
 ];
 
 export const Features = () => {
@@ -45,7 +51,9 @@ export const Features = () => {
         </h2>
         <div className="max-w-xl mx-auto">
           <p className="text-center mt-5 text-xl text-white/70">
-            personalized learning, practical exercises, and clear progress tracking — all tailored to you. Learn at your pace, get regular guidance, and see your skills grow with every session.
+            personalized learning, practical exercises, and clear progress
+            tracking — all tailored to you. Learn at your pace, get regular
+            guidance, and see your skills grow with every session.
           </p>
         </div>
         <div className="mt-16 flex flex-col md:flex-row gap-4">
@@ -56,6 +64,7 @@ export const Features = () => {
               description={plan.description}
               price={plan.price}
               perks={plan.perks}
+              file={plan.file}
             />
           ))}
         </div>
