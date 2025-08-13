@@ -9,21 +9,42 @@ import { ContactButton } from "./Buttons";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Smooth scroll with offset after menu close
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    setIsOpen(false); // close menu first
+
+    setTimeout(() => {
+      const el = document.querySelector(id);
+      if (el) {
+        const offset = document.querySelector("section")?.clientHeight || 80; // auto height
+        const bodyTop = document.body.getBoundingClientRect().top;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementPosition = elementTop - bodyTop;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 300); // wait for mobile menu close animation
+  };
+
   return (
-    <section className="py-4 bg-black">
+    <section className="py-4 bg-black w-full z-50">
       <div className="px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="relative w-24 h-8">
-  <Image
-    src={logoImage}
-    alt="Saas logo"
-    fill
-    style={{ objectFit: "contain" }}
-    priority
-  />
-</div>
-
+            <Image
+              src={logoImage}
+              alt="Saas logo"
+              fill
+              style={{ objectFit: "contain" }}
+              priority
+            />
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -31,7 +52,6 @@ export const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              // Inline close icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -40,7 +60,11 @@ export const Navbar = () => {
                 stroke="white"
                 className="w-6 h-6"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
               <MenuIcon className="text-white w-6 h-6" />
@@ -75,22 +99,22 @@ export const Navbar = () => {
               <div className="flex flex-col mt-4 space-y-4 text-white/60">
                 <a
                   href="#pricing-area"
+                  onClick={(e) => handleScroll(e, "#pricing-area")}
                   className="hover:text-white transition duration-300"
-                  onClick={() => setIsOpen(false)}
                 >
                   Pricing
                 </a>
                 <a
                   href="#product-showcase"
+                  onClick={(e) => handleScroll(e, "#product-showcase")}
                   className="hover:text-white transition duration-300"
-                  onClick={() => setIsOpen(false)}
                 >
                   About Us
                 </a>
                 <a
                   href="#faqs"
+                  onClick={(e) => handleScroll(e, "#faqs")}
                   className="hover:text-white transition duration-300"
-                  onClick={() => setIsOpen(false)}
                 >
                   FAQ&apos;s
                 </a>
