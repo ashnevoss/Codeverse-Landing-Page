@@ -82,12 +82,12 @@ export const ProductShowcase = () => {
               My strength lies in combining <strong>hands-on coding knowledge</strong> with <strong>real-world industry insights</strong>, so I don’t just teach you to code—<strong>I guide you to build a meaningful career in tech</strong>. Together, we’ll create a learning experience that’s <strong>clear, focused, and tailored to your goals</strong>, helping you navigate the evolving tech landscape with confidence.
             </p>
 
-            <div className="flex gap-4 mt-8">
+            <div className="flex gap-4 mt-8 ">
               <a
                 href="https://instagram.com/ashugill.prsnl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 rounded-full bg-white text-black font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform"
+                className="px-6 py-2 rounded-lg bg-white text-black font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform"
               >
                 Instagram
               </a>
@@ -95,7 +95,7 @@ export const ProductShowcase = () => {
                 href="https://wa.me/9517925660"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 rounded-full border border-white/70 text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                className="px-6 py-2 rounded-lg border border-white/70 text-white font-semibold hover:bg-white hover:text-black transition-colors"
               >
                 WhatsApp
               </a>

@@ -73,6 +73,9 @@ export const Navbar = () => {
 
           {/* Desktop Nav */}
           <nav className="text-white/60 items-center gap-6 hidden md:flex">
+            <a href="#waitlist-id" className="hover:text-white transition duration-300">
+              Waitlist ✨
+            </a>       
             <a href="#pricing-area" className="hover:text-white transition duration-300">
               Pricing
             </a>
@@ -97,6 +100,13 @@ export const Navbar = () => {
               className="overflow-hidden md:hidden"
             >
               <div className="flex flex-col mt-4 space-y-4 text-white/60">
+              <a
+                  href="#waitlist-id"
+                  onClick={(e) => handleScroll(e, "#waitlist-id")}
+                  className="hover:text-white transition duration-300"              
+              >
+                Waitlist ✨
+              </a>
                 <a
                   href="#pricing-area"
                   onClick={(e) => handleScroll(e, "#pricing-area")}

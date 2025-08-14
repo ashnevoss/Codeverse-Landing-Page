@@ -66,7 +66,7 @@ export default function WaitlistSection() {
   };
 
   return (
-    <section className="relative isolate w-full overflow-hidden bg-black py-16 sm:py-24">
+    <section id="waitlist-id" className="relative isolate w-full overflow-hidden bg-black py-16 sm:py-24">
       {/* Background Glow */}
       <div
         className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full blur-3xl"
