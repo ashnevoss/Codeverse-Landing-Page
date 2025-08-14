@@ -113,7 +113,7 @@ export default function WaitlistSection() {
                     type="text"
                     required
                     className="mt-2 block w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-white/40 outline-none"
-                    placeholder="Ashne Voss"
+                    placeholder="Jaspreet Singh"
                   />
                 </div>
 
@@ -142,7 +142,7 @@ export default function WaitlistSection() {
                     pattern="[0-9\+\-\(\) ]{7,}"
                     required
                     className="mt-2 block w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder-white/40 outline-none"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 12345 67890"
                   />
                 </div>
 
