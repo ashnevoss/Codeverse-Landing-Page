@@ -93,7 +93,7 @@ const CallToAction = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-black text-white py-20 text-center overflow-hidden"
+      className="bg-black text-white py-32 text-center overflow-hidden"
     >
       <div className="container max-w-xl mx-auto relative">
         <motion.div style={{ translateY }}>

@@ -6,6 +6,7 @@ import { Features } from "@/sections/Features";
 import { ProductShowcase } from "@/sections/ProductShowcase";
 import { FAQs } from "@/sections/FAQs";
 import CallToAction from "@/sections/CallToAction"; // ✅ no curly braces
+import WaitlistSection from "@/sections/Waitlist";
 
 import { Footer } from "@/sections/Footer";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <LogoTicker />
       <Features />
+      <WaitlistSection />
       <ProductShowcase />
       <FAQs />
       <CallToAction />
